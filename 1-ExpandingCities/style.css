@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	flex-direction: column; /* setting it to column means to stack it vertically */
+	align-items: center; /* think of it like flex-x */
+	justify-content: center; /* think of it like flex-y */
+	height: 100vh; /* need height to be 100vh (100% of viewport height) for justify-content to work*/
+	overflow: hidden;
+	margin: 0; /* just to clarify: the h1 h2 h3 tags themselves have a bit of margin */
+}
+
+.container {
+	display: flex;
+	width: 90vw;
+	height: 80vh;
+}
+
+.panel {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 40px;
+	color: #fff;
+	cursor: pointer;
+	flex: 1;
+	margin: 10px;
+	position: relative;
+	transition: flex 0.5s ease-in;
+}
+
+.panel h2 {
+	font-size: 24px;
+	font-weight: bolder;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	opacity: 0;
+}
+
+.panel.selected {
+	flex: 10;
+}
+
+.panel.selected h2 {
+	opacity: 1;
+	transition: opacity 0.3s ease-in 0.5s;
+}
